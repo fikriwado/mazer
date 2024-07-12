@@ -1,26 +1,27 @@
-.btn:not(.btn-light):not([class^="btn-outline-"]) .dropdown-toggle:after {
-    color: #fff;
+.btn:not(.btn-light):not([class^='btn-outline-']) .dropdown-toggle:after {
+  color: #fff;
 }
 .dropdown-menu-large {
-    min-width: 16rem;
+  min-width: 16rem;
 }
 .dropdown-menu {
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.03);
 }
 .dropdown-item {
-    transition: all .5s;
+  transition: all 0.5s;
 }
 .dropdown {
-    .avatar {
-        margin-right: .6rem;
-    }
+  .avatar {
+    margin-right: 0.6rem;
+  }
 }
-.user-dropdown-status, .user-dropdown-name {
-    margin: 0;
+.user-dropdown-status,
+.user-dropdown-name {
+  margin: 0;
 }
 @media screen and (max-width: 576px) {
-    .dropdown-center[data-bs-popper] {
-        left: 50%;
-        transform: translateX(-50%)
-    }
+  .dropdown-center[data-bs-popper] {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

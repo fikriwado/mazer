@@ -10,6 +10,7 @@
 
 Make sure to not commit generated files from your dist folder.
 All changes need to be made in the source files located in the `src` folder.
+
 - Change the `scss` files to adapt styles.
 - Change the nunjucks based `html` files or the content defining `json` files to adapt layout and content.
 - Change the `js` files to adapt the application code.

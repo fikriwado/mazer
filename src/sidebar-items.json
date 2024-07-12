@@ -323,14 +323,14 @@
         "name": "JS Vector Map",
         "url": "ui-map-jsvectormap.html"
       },
-			{
-				"name": "Leaflet Map",
-				"url": "ui-map-leaflet.html"
-			},
-			{
-				"name": "OpenLayers Map",
-				"url": "ui-map-openlayers.html"
-			}
+      {
+        "name": "Leaflet Map",
+        "url": "ui-map-leaflet.html"
+      },
+      {
+        "name": "OpenLayers Map",
+        "url": "ui-map-openlayers.html"
+      }
     ]
   },
   {

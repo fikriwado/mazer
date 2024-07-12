@@ -1,8 +1,8 @@
-name: "Stale issue handler"
+name: 'Stale issue handler'
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: '0 0 * * *'
 
 jobs:
   stale:
@@ -11,7 +11,7 @@ jobs:
       - uses: actions/stale@main
         id: stale
         with:
-          stale-issue-label: "stale"
+          stale-issue-label: 'stale'
           stale-issue-message: 'This issue has been automatically marked as stale because it has been open for 14 days without activity. It will be closed if no further activity occurs within the next 14 days. If this is still an issue, just leave a comment or remove the "stale" label.'
           days-before-stale: 14
           days-before-close: 14

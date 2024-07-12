@@ -1,4 +1,3 @@
-
 FilePond.registerPlugin(
   FilePondPluginImagePreview,
   FilePondPluginImageCrop,
@@ -6,47 +5,47 @@ FilePond.registerPlugin(
   FilePondPluginImageFilter,
   FilePondPluginImageResize,
   FilePondPluginFileValidateSize,
-  FilePondPluginFileValidateType,
+  FilePondPluginFileValidateType
 )
 
 // Filepond: Basic
-FilePond.create(document.querySelector(".basic-filepond"), {
+FilePond.create(document.querySelector('.basic-filepond'), {
   credits: null,
   allowImagePreview: false,
   allowMultiple: false,
   allowFileEncode: false,
   required: false,
-  storeAsFile: true,
+  storeAsFile: true
 })
 
 // Filepond: Multiple Files
-FilePond.create(document.querySelector(".multiple-files-filepond"), {
+FilePond.create(document.querySelector('.multiple-files-filepond'), {
   credits: null,
   allowImagePreview: false,
   allowMultiple: true,
   allowFileEncode: false,
   required: false,
-  storeAsFile: true,
+  storeAsFile: true
 })
 
 // Filepond: With Validation
-FilePond.create(document.querySelector(".with-validation-filepond"), {
+FilePond.create(document.querySelector('.with-validation-filepond'), {
   credits: null,
   allowImagePreview: false,
   allowMultiple: true,
   allowFileEncode: false,
   required: true,
-  acceptedFileTypes: ["image/png"],
+  acceptedFileTypes: ['image/png'],
   fileValidateTypeDetectType: (source, type) =>
     new Promise((resolve, reject) => {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
-  storeAsFile: true,
+  storeAsFile: true
 })
 
 // Filepond: ImgBB with server property
-FilePond.create(document.querySelector(".imgbb-filepond"), {
+FilePond.create(document.querySelector('.imgbb-filepond'), {
   credits: null,
   allowImagePreview: false,
   server: {
@@ -59,8 +58,8 @@ FilePond.create(document.querySelector(".imgbb-filepond"), {
       const request = new XMLHttpRequest()
       // you can change it by your client api key
       request.open(
-        "POST",
-        "https://api.imgbb.com/1/upload?key=762894e2014f83c023b233b2f10395e2"
+        'POST',
+        'https://api.imgbb.com/1/upload?key=762894e2014f83c023b233b2f10395e2'
       )
 
       request.upload.onprogress = (e) => {
@@ -71,7 +70,7 @@ FilePond.create(document.querySelector(".imgbb-filepond"), {
         if (request.status >= 200 && request.status < 300) {
           load(request.responseText)
         } else {
-          error("oh no")
+          error('oh no')
         }
       }
 
@@ -81,82 +80,82 @@ FilePond.create(document.querySelector(".imgbb-filepond"), {
             let response = JSON.parse(this.responseText)
 
             Toastify({
-              text: "Success uploading to imgbb! see console f12",
+              text: 'Success uploading to imgbb! see console f12',
               duration: 3000,
               close: true,
-              gravity: "bottom",
-              position: "right",
-              backgroundColor: "#4fbe87",
+              gravity: 'bottom',
+              position: 'right',
+              backgroundColor: '#4fbe87'
             }).showToast()
           } else {
             Toastify({
-              text: "Failed uploading to imgbb! see console f12",
+              text: 'Failed uploading to imgbb! see console f12',
               duration: 3000,
               close: true,
-              gravity: "bottom",
-              position: "right",
-              backgroundColor: "#ff0000",
+              gravity: 'bottom',
+              position: 'right',
+              backgroundColor: '#ff0000'
             }).showToast()
           }
         }
       }
 
       request.send(formData)
-    },
+    }
   },
-  storeAsFile: true,
+  storeAsFile: true
 })
 
 // Filepond: Image Preview
-FilePond.create(document.querySelector(".image-preview-filepond"), {
+FilePond.create(document.querySelector('.image-preview-filepond'), {
   credits: null,
   allowImagePreview: true,
   allowImageFilter: false,
   allowImageExifOrientation: false,
   allowImageCrop: false,
-  acceptedFileTypes: ["image/png", "image/jpg", "image/jpeg"],
+  acceptedFileTypes: ['image/png', 'image/jpg', 'image/jpeg'],
   fileValidateTypeDetectType: (source, type) =>
     new Promise((resolve, reject) => {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
-  storeAsFile: true,
+  storeAsFile: true
 })
 
 // Filepond: Image Crop
-FilePond.create(document.querySelector(".image-crop-filepond"), {
+FilePond.create(document.querySelector('.image-crop-filepond'), {
   credits: null,
   allowImagePreview: true,
   allowImageFilter: false,
   allowImageExifOrientation: false,
   allowImageCrop: true,
-  acceptedFileTypes: ["image/png", "image/jpg", "image/jpeg"],
+  acceptedFileTypes: ['image/png', 'image/jpg', 'image/jpeg'],
   fileValidateTypeDetectType: (source, type) =>
     new Promise((resolve, reject) => {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
-  storeAsFile: true,
+  storeAsFile: true
 })
 
 // Filepond: Image Exif Orientation
-FilePond.create(document.querySelector(".image-exif-filepond"), {
+FilePond.create(document.querySelector('.image-exif-filepond'), {
   credits: null,
   allowImagePreview: true,
   allowImageFilter: false,
   allowImageExifOrientation: true,
   allowImageCrop: false,
-  acceptedFileTypes: ["image/png", "image/jpg", "image/jpeg"],
+  acceptedFileTypes: ['image/png', 'image/jpg', 'image/jpeg'],
   fileValidateTypeDetectType: (source, type) =>
     new Promise((resolve, reject) => {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
-  storeAsFile: true,
+  storeAsFile: true
 })
 
 // Filepond: Image Filter
-FilePond.create(document.querySelector(".image-filter-filepond"), {
+FilePond.create(document.querySelector('.image-filter-filepond'), {
   credits: null,
   allowImagePreview: true,
   allowImageFilter: true,
@@ -164,19 +163,19 @@ FilePond.create(document.querySelector(".image-filter-filepond"), {
   allowImageCrop: false,
   imageFilterColorMatrix: [
     0.299, 0.587, 0.114, 0, 0, 0.299, 0.587, 0.114, 0, 0, 0.299, 0.587, 0.114,
-    0, 0, 0.0, 0.0, 0.0, 1, 0,
+    0, 0, 0.0, 0.0, 0.0, 1, 0
   ],
-  acceptedFileTypes: ["image/png", "image/jpg", "image/jpeg"],
+  acceptedFileTypes: ['image/png', 'image/jpg', 'image/jpeg'],
   fileValidateTypeDetectType: (source, type) =>
     new Promise((resolve, reject) => {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
-  storeAsFile: true,
+  storeAsFile: true
 })
 
 // Filepond: Image Resize
-FilePond.create(document.querySelector(".image-resize-filepond"), {
+FilePond.create(document.querySelector('.image-resize-filepond'), {
   credits: null,
   allowImagePreview: true,
   allowImageFilter: false,
@@ -185,13 +184,13 @@ FilePond.create(document.querySelector(".image-resize-filepond"), {
   allowImageResize: true,
   imageResizeTargetWidth: 200,
   imageResizeTargetHeight: 200,
-  imageResizeMode: "cover",
+  imageResizeMode: 'cover',
   imageResizeUpscale: true,
-  acceptedFileTypes: ["image/png", "image/jpg", "image/jpeg"],
+  acceptedFileTypes: ['image/png', 'image/jpg', 'image/jpeg'],
   fileValidateTypeDetectType: (source, type) =>
     new Promise((resolve, reject) => {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
-  storeAsFile: true,
+  storeAsFile: true
 })

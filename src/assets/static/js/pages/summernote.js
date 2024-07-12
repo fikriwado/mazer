@@ -1,13 +1,13 @@
-$("#summernote").summernote({
+$('#summernote').summernote({
   tabsize: 2,
-  height: 120,
+  height: 120
 })
-$("#hint").summernote({
+$('#hint').summernote({
   height: 100,
   toolbar: false,
-  placeholder: "type with apple, orange, watermelon and lemon",
+  placeholder: 'type with apple, orange, watermelon and lemon',
   hint: {
-    words: ["apple", "orange", "watermelon", "lemon"],
+    words: ['apple', 'orange', 'watermelon', 'lemon'],
     match: /\b(\w{1,})$/,
     search: function (keyword, callback) {
       callback(
@@ -15,6 +15,6 @@ $("#hint").summernote({
           return item.indexOf(keyword) === 0
         })
       )
-    },
-  },
+    }
+  }
 })
