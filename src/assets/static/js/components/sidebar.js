@@ -8,9 +8,12 @@ const calculateChildrenHeight = (el, deep = false) => {
   const children = el.children
 
   let height = 0
+  const margin = 10
+  const marginParent = 16
+
   for (let i = 0; i < el.childElementCount; i++) {
     const child = children[i]
-    height += child.querySelector('.submenu-link').clientHeight
+    height += child.querySelector('.submenu-link').clientHeight + margin
 
     // 2-level menu
     if (deep && child.classList.contains('has-sub')) {
@@ -24,7 +27,7 @@ const calculateChildrenHeight = (el, deep = false) => {
       }
     }
   }
-  el.style.setProperty('--submenu-height', height + 'px')
+  el.style.setProperty('--submenu-height', height + marginParent + 'px')
   return height
 }
 
@@ -93,6 +96,19 @@ class Sidebar {
       const container = document.querySelector('.sidebar-wrapper')
       const ps = new PerfectScrollbar(container, {
         wheelPropagation: true
+      })
+      container.addEventListener('wheel', function (event) {
+        // Determine if the user is trying to scroll up or down
+        const delta = event.deltaY
+
+        // Check if the container is at the top or bottom
+        const isAtTop = container.scrollTop === 0
+        const isAtBottom =
+          container.scrollTop + container.clientHeight >= container.scrollHeight
+
+        if ((isAtTop && delta < 0) || (isAtBottom && delta > 0)) {
+          event.preventDefault() // Prevent scrolling
+        }
       })
     }
 

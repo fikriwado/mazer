@@ -16,7 +16,7 @@ $dark-mode: false !default;
 
 $theme-colors-light: (
   'primary': #ebf3ff,
-  'secondary': #e6eaee,
+  'secondary': #79edd0,
   'success': #d2ffe8,
   'danger': #ffdede,
   'warning': #fffdd8,
@@ -27,18 +27,18 @@ $theme-colors-light: (
 $alert-colors: (
   primary: (
     text-color: #fff,
-    background-color: #435ebe
+    background-color: #3c50e0
   ),
   secondary: (
-    text-color: #383d41,
-    background-color: #ebeef3
+    text-color: #fff,
+    background-color: #13c296
   ),
   success: (
     text-color: #fff,
     background-color: #28ab55
   ),
   warning: (
-    text-color: #3f3a26,
+    text-color: #212b36,
     background-color: #eaca4a
   ),
   danger: (
@@ -47,10 +47,10 @@ $alert-colors: (
   ),
   dark: (
     text-color: #fff,
-    background-color: #454546
+    background-color: #1c2434
   ),
   light: (
-    text-color: #818182,
+    text-color: #212b36,
     background-color: #f9f9f9
   ),
   info: (
@@ -73,7 +73,7 @@ $btn-colors: (
     text-color: #fff
   ),
   warning: (
-    text-color: #000
+    text-color: #212b36
   ),
   danger: (
     text-color: #fff
@@ -82,10 +82,10 @@ $btn-colors: (
     text-color: #fff
   ),
   light: (
-    text-color: #000
+    text-color: #212b36
   ),
   info: (
-    text-color: #000
+    text-color: #fff
   )
 ) !default;
 
@@ -93,7 +93,7 @@ $btn-colors: (
 //
 // Settings for the `<body>` element.
 
-$body-bg: #f2f7ff !default;
+$body-bg: #f1f5f9 !default;
 $body-color: #607080 !default;
 $body-text-align: null !default;
 
@@ -124,16 +124,16 @@ $grays: (
 ) !default;
 // fusv-enable
 
-$blue: #435ebe !default;
+$blue: #3c50e0 !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #d63384 !default;
 $red: #dc3545 !default;
 $orange: #fd7e14 !default;
-$yellow: #ffc107 !default;
-$green: #198754 !default;
+$yellow: #f9c107 !default;
+$green: #3ca745 !default;
 $teal: #20c997 !default;
-$cyan: #0dcaf0 !default;
+$cyan: #3ba2b8 !default;
 
 // scss-docs-start colors-map
 $colors: (
@@ -154,22 +154,22 @@ $colors: (
 // scss-docs-end colors-map
 
 $primary: $blue !default;
-$secondary: $gray-600 !default;
+$secondary: #13c296 !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
-$light: $gray-400 !default;
-$dark: $body-bg;
+$light: #efefef !default;
+$dark: #1c2434 !default;
 
 // Mazer Variables
 
-$sidebar-bg: #fff !default;
-$sidebar-link-color: #25396f !default;
-$sidebar-link-hover-bg: rgb(240, 241, 245) !default;
-$sidebar-link-hover-color: #25396f !default;
-$sidebar-submenu-color: $sidebar-link-color !default;
-$sidebar-submenu-hover-color: $primary !default;
+$sidebar-bg: $dark !default;
+$sidebar-link-color: #dee4ee !default;
+$sidebar-link-hover-bg: #333a48 !default;
+$sidebar-link-hover-color: #dee4ee !default;
+$sidebar-submenu-color: #8a99af !default;
+$sidebar-submenu-hover-color: $sidebar-link-color !default;
 
 // Pages
 $page-auth-bg: $white !default;
@@ -204,7 +204,7 @@ $theme-colors: (
   'warning': $warning,
   'danger': $danger,
   'light': $light,
-  'dark': #131313
+  'dark': $dark
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -848,13 +848,13 @@ $btn-border-radius-sm: $border-radius-sm !default;
 $btn-border-radius-lg: $border-radius-lg !default;
 
 $btn-transition:
-  color 0.15s ease-in-out,
-  background-color 0.15s ease-in-out,
-  border-color 0.15s ease-in-out,
-  box-shadow 0.15s ease-in-out !default;
+  color 0s ease-in-out,
+  background-color 0s ease-in-out,
+  border-color 0s ease-in-out,
+  box-shadow 0s ease-in-out !default;
 
-$btn-hover-bg-shade-amount: 15% !default;
-$btn-hover-bg-tint-amount: 15% !default;
+$btn-hover-bg-shade-amount: 10% !default;
+$btn-hover-bg-tint-amount: 10% !default;
 $btn-hover-border-shade-amount: 20% !default;
 $btn-hover-border-tint-amount: 10% !default;
 $btn-active-bg-shade-amount: 20% !default;
