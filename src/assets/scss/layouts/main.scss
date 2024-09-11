@@ -17,6 +17,16 @@
   #content-wrapper {
     padding: 2rem;
   }
+  #content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px);
+    padding-bottom: 0px;
+
+    .page-content {
+      flex: 1;
+    }
+  }
 }
 #main,
 #main-content {
@@ -49,6 +59,7 @@ a {
   text-decoration: none;
 }
 #header {
+  max-height: 80px;
   svg {
     color: $gray-600;
   }
